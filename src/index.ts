@@ -13,7 +13,10 @@ export default class App {
   }
 
   private config = (): void => {
-    this.app.use(express.json);
+    this.app.get('/', (_req: express.Request, res: express.Response) => {
+      res.send('Servidor Iniciado');
+    });
+    this.app.use(express.json());
     this.app.use(cors());
     this.app.use(routers);
   }
