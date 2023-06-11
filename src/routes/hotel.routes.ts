@@ -1,16 +1,13 @@
 import { Router, Request, Response } from 'express';
-import { HotelController } from '../controller/Hotel.controller';
+import { HotelController } from '../controller/hotel.controller';
+import { HotelService } from '../service/hotel.service';
 
 const router = Router();
 
-router.get('/', HotelController.findOne);
+const hotelService = new HotelService();
 
-router.post('/', (_req: Request, res: Response) => {
-  res.send('Cadastra hotel');
-});
+const hotelController = new HotelController(hotelService);
 
-router.patch('/:id', (_req: Request, res: Response) => {
-  res.send('Atualiza hotel');
-});
+router.post('/', hotelController.createHotel);
 
 export default router;
