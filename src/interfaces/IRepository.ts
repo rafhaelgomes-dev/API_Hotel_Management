@@ -4,5 +4,4 @@ export interface IRepository {
   findAll(): Hotel[];
   insertOne(): any;
   updateOne(): any;
-
 }

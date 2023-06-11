@@ -1,10 +1,9 @@
 import { Router, Request, Response } from 'express';
+import { HotelController } from '../controller/Hotel.controller';
 
 const router = Router();
 
-router.get('/', (_req: Request, res: Response) => {
-  res.send('Busca os hoteis');
-});
+router.get('/', HotelController.findOne);
 
 router.post('/', (_req: Request, res: Response) => {
   res.send('Cadastra hotel');

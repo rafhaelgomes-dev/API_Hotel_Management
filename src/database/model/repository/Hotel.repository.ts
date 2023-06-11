@@ -3,6 +3,7 @@ import { Hotel } from "../entitites/Hotel"
 
 export class HotelRepository implements IRepository {
   private Hotel: Hotel;
+  
   constructor(Hotel: Hotel) {
     this.Hotel = Hotel;
   }

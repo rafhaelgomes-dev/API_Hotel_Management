@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha --recursive 'test/**/*.test.ts'",
     "dev": "nodemon src/server.ts",
-    "knex:migrate:make": "knex --knexfile src/database/knexfile.ts -x ts migrate:make",
+    "knex:migrate:make": "knex --knexfile src/database/knexfile.ts migrate:make",
     "knex:migrate:latest": "knex --knexfile src/database/knexfile.ts migrate:latest",
     "knex:migrate:rollback": "knex --knexfile src/database/knexfile.ts migrate:rollback"
   },

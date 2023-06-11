@@ -1,6 +1,12 @@
 export default  {
   client: 'pg',
-  connection: process.env.DATABASE_URL,
+  connection: {
+    host: "localhost",
+    port: 5432,
+    database: "hotel_management",
+    user: "postgres",
+    password: "admin",
+},
   pool: {
     min: 2,
     max: 10
