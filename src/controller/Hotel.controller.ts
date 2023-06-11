@@ -16,4 +16,4 @@ export class HotelController {
       res.status(400).send((error as Error).message);
     }
   }
-}
+};
