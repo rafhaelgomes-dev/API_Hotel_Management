@@ -6,8 +6,8 @@ import { validate } from "../utils/validateHotel";
 export class HotelService {
   private HotelRepository: HotelRepository;
 
-  constructor() {
-    this.HotelRepository = new HotelRepository();
+  constructor(model: HotelRepository) {
+    this.HotelRepository = model;
   }
 
   public insertHotel = async (data: Hotel): Promise<IMessage> => {
