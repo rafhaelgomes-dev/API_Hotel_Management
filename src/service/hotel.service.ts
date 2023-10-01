@@ -15,7 +15,8 @@ export class HotelService {
     if (!validateData.validate) {
       return validateData;
     }
-    await this.HotelRepository.insertOne(data);
-    return { message: 'Hotel cadastrado com sucesso', statusCode: 201 };
+    const result = await this.HotelRepository.insertOne(data);
+    console.log(result);
+    return { message: 'Hotel cadastrado com sucesso', statusCode: 201, result: result};
   };
 };

@@ -11,7 +11,12 @@ export class HotelController {
   public createHotel = async (req:Request, res:Response) => {
     try {
       const result = await this.hotelService.insertHotel(req.body);
-      return res.status(result.statusCode).send({ message: result.message});
+
+      if (result.statusCode !== 201) {
+        return res.status(result.statusCode).send({ message: result.message});
+      }
+
+      return res.status(result.statusCode).send(result.result);
     } catch (error) {
       res.status(400).send((error as Error).message);
     }
